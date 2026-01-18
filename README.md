@@ -70,6 +70,34 @@ pull requests to send automated reminders.
 - Reduced long-unattended pull requests
 - Improved reviewer awareness with minimal noise
 
+## Hands-on Practice & Validation
+
+This system was designed and validated through an official AWS hands-on practice
+focused on DynamoDB-based event modeling and stream processing.
+
+### AWS Hands-on Session
+
+- Practice: DynamoDB Event-driven Architecture
+- Link: https://acc.awskorea.kr/
+
+> Note: The hands-on practice documentation is written in Korean.
+> For English readers, please use your browser’s built-in
+> "Translate to English" feature after opening each session page.
+
+### What Was Practiced
+
+- Modeling event data in DynamoDB as a source of truth
+- Using DynamoDB Streams (CDC) to trigger downstream processing
+- Designing asynchronous fan-out workflows
+- Evaluating time-based conditions for follow-up actions
+
+### How It Maps to This Project
+
+- Pull request and issue events are stored as immutable records in DynamoDB
+- DynamoDB Streams are used to decouple ingestion from processing
+- Stream consumers trigger LLM-based analysis and notifications
+- Scheduled evaluations for stale items are handled via EventBridge
+
 ## References
 
 - AWS Cloud Deep Dive Hands-on Guide: (link will be added)
