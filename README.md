@@ -24,7 +24,7 @@ pull requests to send automated reminders.
 - **Amazon API Gateway**  
   Serves as the entry point for incoming webhook events.
 
-- **AWS Lambda (Python)**  
+- **AWS Lambda (Python — Ingestion)**  
   Normalizes incoming webhook payloads and persists pull request and issue events into DynamoDB.
 
 - **Amazon DynamoDB**  
@@ -33,7 +33,7 @@ pull requests to send automated reminders.
 - **DynamoDB Streams (CDC)**  
   Emits change events from DynamoDB and enables asynchronous fan-out processing.
 
-- **AWS Lambda (Python)**  
+- **AWS Lambda (Python — Stream Consumer)**  
   Consumes DynamoDB Stream events to invoke Amazon Bedrock and publish notifications via SNS.
 
 - **Amazon Bedrock**  
@@ -47,13 +47,14 @@ pull requests to send automated reminders.
 
 ## Workflow
 
-1. A pull request or issue event is received via GitHub Webhooks
-2. API Gateway forwards the event to an ingestion Lambda (Python)
-3. The ingestion Lambda normalizes the payload and stores it in DynamoDB (event store)
-4. DynamoDB Streams (CDC) emits change records for downstream processing
-5. Stream consumer Lambda(s) call Amazon Bedrock to generate summaries/comments when needed
-6. Stream consumer Lambda(s) publish notifications via SNS
-7. EventBridge runs scheduled checks for stale items and triggers reminder notifications via SNS
+1. A pull request or issue event is received via GitHub Webhooks.
+2. API Gateway forwards the event to an ingestion Lambda (Python).
+3. The ingestion Lambda normalizes the payload and stores it in DynamoDB (event store).
+4. DynamoDB Streams (CDC) emits change records for downstream processing.
+5. Stream consumer Lambda(s) call Amazon Bedrock to generate summaries/comments when needed.
+6. Stream consumer Lambda(s) publish notifications via SNS.
+7. EventBridge runs scheduled checks for stale items.
+8. Reminder workflows are triggered and notifications are sent via SNS.
 
 ## My Role
 
@@ -66,9 +67,9 @@ pull requests to send automated reminders.
 
 ## Impact
 
-- Accelerated pull request review cycles
-- Reduced long-unattended pull requests
-- Improved reviewer awareness with minimal noise
+- Accelerated pull request review cycles by automating LLM-based summaries and review comments
+- Reduced long-unattended pull requests through scheduled detection and reminder workflows
+- Improved reviewer awareness while minimizing notification noise via event-driven design
 
 ## Hands-on Practice & Validation
 
@@ -77,7 +78,7 @@ focused on DynamoDB-based event modeling and stream processing.
 
 ### AWS Hands-on Session
 
-- Practice: DynamoDB Event-driven Architecture
+- Practice: AWS Cloud Deep Dive
 - Link: https://acc.awskorea.kr/
 
 > Note: The hands-on practice documentation is written in Korean.
@@ -97,11 +98,6 @@ focused on DynamoDB-based event modeling and stream processing.
 - DynamoDB Streams are used to decouple ingestion from processing
 - Stream consumers trigger LLM-based analysis and notifications
 - Scheduled evaluations for stale items are handled via EventBridge
-
-## References
-
-- AWS Cloud Deep Dive Hands-on Guide: (link will be added)
-- Demo Page: (link will be added)
 
 > Note: Source code is not publicly available as this project was developed
 > as part of an internal AWS hands-on session. This repository focuses on
