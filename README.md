@@ -45,6 +45,28 @@ pull requests to send automated reminders.
 - **Amazon SNS**  
   Sends automated review comments and reminder notifications to reviewers.
 
+## Hands-on Walkthrough
+
+The following hands-on sessions document how each part of the system
+was implemented step by step, from webhook ingestion to scheduled
+reminder workflows.
+
+1. **Webhook Ingestion**  
+   GitHub → API Gateway → Lambda  
+   👉 [01 – Webhook Ingestion](./hands-on/01-webhook-ingestion.md)
+
+2. **Event Storage & Stream Processing**  
+   DynamoDB persistence and CDC via DynamoDB Streams  
+   👉 [02 – DynamoDB Streams](./hands-on/02-dynamodb-stream.md)
+
+3. **Automated Code Review with Bedrock**  
+   LLM-based PR analysis, GitHub comments, and notifications  
+   👉 [03 – Bedrock Code Review](./hands-on/03-bedrock-review.md)
+
+4. **Scheduled Issue Monitoring**  
+   EventBridge-based scanning and reminder notifications  
+   👉 [04 – EventBridge Issue Scanner](./hands-on/04-eventbridge-reminder.md)
+
 ## Workflow
 
 1. A pull request or issue event is received via GitHub Webhooks.
