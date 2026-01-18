@@ -63,7 +63,7 @@ Next, create an API Gateway endpoint and connect it to the Lambda function.
 - Security: **Open**
 - Click **Add**
 
-![API Gateway Settings](0106.png)
+![API Gateway Settings](./images/0106.png)
 
 After creation, go to:
 
@@ -71,7 +71,7 @@ After creation, go to:
 
 You should see a trigger named similar to `WebhookToDB-API`.
 
-![Trigger Created](0107.png)
+![Trigger Created](./images/0107.png)
 
 ---
 
@@ -91,7 +91,7 @@ not to process or store them yet.
 
 3. Click **Deploy** to apply the changes.
 
-![](./images/.png)
+![](./images/0108.png)
 
 ---
 
@@ -100,7 +100,7 @@ not to process or store them yet.
 After deploying the Lambda function, copy the API Gateway endpoint URL.
 This endpoint will be used as the GitHub Webhook destination.
 
-![](0110.png)
+![](./images/0110.png)
 
 ---
 
@@ -116,7 +116,7 @@ Now, create a webhook in your GitHub repository.
 1. Go to **GitHub → Repository Settings → Webhooks**.
 2. Click **Add webhook**.
 
-![](0111.png)
+![](./images/0111.png)
 
 ### Webhook Configuration
 
@@ -131,7 +131,7 @@ Select the following events:
 - **Issues**
 - **Pull requests**
 
-![](0113.png)
+![](./images/0113.png)
 
 Click **Add webhook** to save.
 
@@ -145,12 +145,12 @@ To test the webhook configuration, create a new issue.
 2. Click **New Issue**.
 3. Create an issue.
 
-![](0114.png)
+![](./images/0114.png)
 
 Return to the Webhooks page.
 If the delivery shows a check mark, the event was sent successfully.
 
-![](0115.png)
+![](./images/0115.png)
 
 ---
 
@@ -165,7 +165,7 @@ To inspect the payload sent by GitHub:
 You should see an event payload with the `opened` action
 for the newly created issue.
 
-![](0116.png)
+![](./images/0116.png)
 
 ---
 
@@ -177,7 +177,7 @@ Finally, verify that AWS Lambda received the webhook event.
 2. Go to **Log groups**.
 3. Select the log group for `WebhookToDB`.
 
-![](0117.png)
+![](./images/0117.png)
 
 You will see two log streams:
 
@@ -186,11 +186,11 @@ You will see two log streams:
 
 Click the latest log stream to inspect the log output.
 
-![](0118.png)
+![](./images/0118.png)
 
 You should see the GitHub webhook payload printed in the logs.
 
-## ![](0119.png)
+![](./images/0119.png)
 
 ## Result
 
