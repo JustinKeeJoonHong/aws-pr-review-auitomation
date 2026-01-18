@@ -61,7 +61,7 @@ Select the **JSON** tab.
 
 Paste the policy from the file below into the editor:
 
-- `hands-on-code/step02_stream/lambda_dynamodb_putitem_policy.json`
+- [`lambda_dynamodb_putitem_policy.json`](../hands-on-code/step02_stream/lambda_dynamodb_putitem_policy.json)
 
 Paste the policy and click **Next**.
 
@@ -86,7 +86,7 @@ and click **Deploy**.
 
 Paste the code from the file below into the editor:
 
-- `hands-on-code/step02_stream/webhook_to_dynamodb.py`
+- [`webhook_to_dynamodb.py`](../hands-on-code/step02_stream/webhook_to_dynamodb.py)
 
 ![](./images/0207.png)
 
@@ -142,7 +142,7 @@ Select the **JSON** tab.
 
 Paste the policy from the file below into the editor:
 
-- `hands-on-code/step02_stream/lambda_stream_bedrock_sns_policy.json`
+- [`lambda_stream_bedrock_sns_policy.json`](../hands-on-code/step02_stream/lambda_stream_bedrock_sns_policy.json)
 
 - DynamoDB Streams
 - SNS
