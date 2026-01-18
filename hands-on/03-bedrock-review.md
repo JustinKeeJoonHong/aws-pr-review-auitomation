@@ -53,15 +53,17 @@ You will be redirected to the **Edit model access** page.
 Scroll down and click **Next**.
 
 ![](./images/0305.png)
+![](./images/0306.png)
 
 On the **Review and submit** page, confirm that **Claude 3 Haiku**
 is selected and click **Submit**.
 
-![](./images/0306.png)
+![](./images/0307.png)
 
 After a short time, you should see **Access granted**.
 
-![](./images/0307.png)
+![](./images/0308.png)
+![](./images/0309.png)
 
 ---
 

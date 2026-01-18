@@ -58,7 +58,10 @@ Click **Add permissions → Create inline policy**.
 ![](./images/0204.png)
 
 Select the **JSON** tab.
-/code
+
+Paste the policy from the file below into the editor:
+
+- `hands-on-code/step02_stream/lambda_dynamodb_putitem_policy.json`
 
 Paste the policy and click **Next**.
 
@@ -81,7 +84,9 @@ Return to the **WebhookToDB** Lambda function.
 Paste the provided code into the editor  
 and click **Deploy**.
 
-/code2
+Paste the code from the file below into the editor:
+
+- `hands-on-code/step02_stream/webhook_to_dynamodb.py`
 
 ![](./images/0207.png)
 
@@ -133,9 +138,11 @@ Click **Add permissions → Create inline policy**.
 
 ![](./images/0212.jpeg)
 
-Select **JSON** and paste the policy for:
+Select the **JSON** tab.
 
-/code3
+Paste the policy from the file below into the editor:
+
+- `hands-on-code/step02_stream/lambda_stream_bedrock_sns_policy.json`
 
 - DynamoDB Streams
 - SNS
