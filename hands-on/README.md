@@ -3,7 +3,7 @@
 This hands-on workshop demonstrates how to build an event-driven,
 serverless notification system for GitHub using AWS services.
 
-![Architecture Diagram](./architecture/pr-review-auto-architecture.png)
+![Architecture Diagram](../architecture/pr-review-auto-architecture.png)
 
 The workshop covers:
 
