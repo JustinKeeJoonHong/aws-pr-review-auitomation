@@ -71,34 +71,32 @@ After a short time, you should see **Access granted**.
 
 Search for **SNS** in the AWS Console.
 
-![](./images/0308.png)
-
 Open the sidebar menu and select  
 **Text messaging (SMS)**.
 
-![](./images/0309.png)
+![](./images/0310.png)
 
 Scroll down to **Sandbox destination phone numbers**
 and click **Add phone number**.
 
-![](./images/0310.png)
+![](./images/0311.png)
 
 Enter your phone number in the format:
 
-- `+82010xxxxxxxx`
+- `+1xxxxxxxxxx`
 
 Select **English (United States)** as the verification language
 and click **Add phone number**.
 
-![](./images/0311.png)
+![](./images/0312.png)
 
 Enter the verification code you received and click **Verify phone number**.
 
-![](./images/0312.png)
+![](./images/0313.png)
 
 Confirm that the **Verification status** is **Verified**.
 
-![](./images/0313.png)
+![](./images/0314.png)
 
 ---
 
@@ -109,11 +107,11 @@ Return to **AWS Lambda → StreamConsumer**.
 Paste the provided code into the code editor  
 and update the required values.
 
-(code1)
+- [`stream_consumer_bedrock_sns.py`](../hands-on-code/step03_bedrock/stream_consumer_bedrock_sns.py)
 
 Click **Deploy**.
 
-![](./images/0314.png)
+![](./images/0315.png)
 
 ---
 
@@ -124,15 +122,15 @@ To support this, we will add a **Lambda Layer**.
 
 In the **StreamConsumer** Lambda page, click **Layers**.
 
-![](./images/0315.png)
+![](./images/0316.png)
 
 Scroll down and click **Add a layer**.
 
-![](./images/0316.png)
+![](./images/0317.png)
 
 On the next page, click **Create a new layer**.
 
-![](./images/0317.png)
+![](./images/0318.png)
 
 ---
 
@@ -145,24 +143,25 @@ Download the required library archive using the link below.
 Enter the values as shown on the screen,
 upload the downloaded zip file, and click **Create**.
 
-![](./images/0318.png)
+![](./images/0319.png)
 
 Open the sidebar and click **Functions**.
 
-![](./images/0319.png)
+![](./images/0320.png)
 
 Select **StreamConsumer**.
 
-![](./images/0320.png)
+![](./images/0321.png)
 
 Click **Layers** again and select **Add a layer**.
 
-![](./images/0321.png)
+![](./images/0322.png)
+![](./images/0323.png)
 
 Choose **Custom layers**, select the layer you just created,
 and click **Add**.
 
-![](./images/0322.png)
+![](./images/0324.png)
 
 ---
 
@@ -173,7 +172,7 @@ To ensure stable execution, update the Lambda configuration.
 Go to **Configuration → General configuration**
 and click **Edit**.
 
-![](./images/0323.png)
+![](./images/0325.png)
 
 Set the following values:
 
@@ -182,7 +181,7 @@ Set the following values:
 
 Click **Save**.
 
-![](./images/0324.png)
+![](./images/0326.png)
 
 ---
 
@@ -192,16 +191,16 @@ To post comments on Pull Requests, a GitHub token is required.
 
 Visit the GitHub token creation page.
 
-![](./images/0325.png)
+![](./images/0327.png)
 
 Select only the **repo** permission
 and click **Generate token**.
 
-![](./images/0326.png)
+![](./images/0328.png)
 
 Copy the generated token.
 
-![](./images/0327.png)
+![](./images/0329.png)
 
 ---
 
@@ -212,18 +211,16 @@ Return to **AWS Lambda → StreamConsumer**.
 Go to **Configuration → Environment variables**
 and click **Edit**.
 
-![](./images/0328.png)
+![](./images/0330.png)
 
 Add a new variable:
 
 - **Key**: `GITHUB_TOKEN`
 - **Value**: (your token)
 
-(code2)
-
 Click **Save**.
 
-![](./images/0329.png)
+![](./images/0331.png)
 
 ---
 
@@ -231,21 +228,26 @@ Click **Save**.
 
 Clone the repository and create a new branch.
 
-(code3)
+```bash
+git checkout -b feature
+```
 
-![](./images/0330.png)
+![](./images/0332.png)
 
 Add a simple file, then commit the changes.
 
-(code4)
+- [`word_count.py`](../hands-on-code/step03_bedrock/word_count.py)
 
-![](./images/0331.png)
+![](./images/0333.png)
 
 Push the branch to GitHub.
 
-(code5)
+```bash
+git add .
+git commit -m "feat: add word_count.py"
+```
 
-![](./images/0332.png)
+![](./images/0334.png)
 
 ---
 
@@ -254,8 +256,8 @@ Push the branch to GitHub.
 Go back to GitHub.
 Click **Compare & pull request**, then click **Create pull request**.
 
-![](./images/0333.png)
-![](./images/0334.png)
+![](./images/0335.png)
+![](./images/0336.png)
 
 ---
 
@@ -264,11 +266,11 @@ Click **Compare & pull request**, then click **Create pull request**.
 After a short time, you should see a code review comment
 automatically posted on the Pull Request.
 
-![](./images/0335.png)
+![](./images/0337.png)
 
 Verify that the review content was generated correctly.
 
-![](./images/0336.png)
+![](./images/0338.jpeg)
 
 ---
 
