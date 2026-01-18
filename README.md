@@ -55,6 +55,15 @@ pull requests to send automated reminders.
 6. Stream consumer Lambda(s) publish notifications via SNS
 7. EventBridge runs scheduled checks for stale items and triggers reminder notifications via SNS
 
+## My Role
+
+- Designed the event-driven serverless architecture
+- Implemented webhook ingestion and event persistence logic
+- Designed CDC-based fan-out processing using DynamoDB Streams
+- Integrated Amazon Bedrock for LLM-based summaries and review comments
+- Built scheduled reminder workflows using EventBridge and SNS
+- Documented system architecture and operational workflows
+
 ## Impact
 
 - Accelerated pull request review cycles
