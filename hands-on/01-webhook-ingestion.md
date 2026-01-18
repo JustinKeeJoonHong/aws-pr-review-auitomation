@@ -1,6 +1,6 @@
 # Step 1 – Connecting GitHub to AWS Lambda using API Gateway
 
-![](0101.png)
+![](./images/0101.png)
 In this step, we connect GitHub Webhooks to AWS Lambda using Amazon API Gateway.
 The goal is to receive GitHub Issue and Pull Request events and verify that they
 are successfully delivered to AWS.
@@ -33,7 +33,7 @@ Create a new AWS Lambda function.
 1. Go to **AWS Lambda**
 2. Click **Create function**
 
-![Create Lambda](0102.png)
+![Create Lambda](./images/0102.png)
 
 ### Lambda Configuration
 
@@ -43,7 +43,7 @@ Create a new AWS Lambda function.
 
 Click **Create function**.
 
-![Lambda Settings](0103.png)
+![Lambda Settings](./images/0103.png)
 
 ---
 
@@ -54,8 +54,8 @@ Next, create an API Gateway endpoint and connect it to the Lambda function.
 1. In the Lambda function page, add a **Trigger**
 2. Select **API Gateway**
 
-![Add Trigger](0104.png)
-![Add Trigger](0105.png)
+![Add Trigger](./images/0104.png)
+![Add Trigger](./images/0105.png)
 
 ### API Gateway Settings
 
@@ -91,7 +91,7 @@ not to process or store them yet.
 
 3. Click **Deploy** to apply the changes.
 
-![](0108.png)
+![](./images/.png)
 
 ---
 
