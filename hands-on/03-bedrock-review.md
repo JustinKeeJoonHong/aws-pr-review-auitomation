@@ -140,6 +140,8 @@ Download the required library archive using the link below.
 
 - **Download layer.zip**
 
+- [`layer.zip`](../hands-on-code/step03_bedrock/layer.zip)
+
 Enter the values as shown on the screen,
 upload the downloaded zip file, and click **Create**.
 
